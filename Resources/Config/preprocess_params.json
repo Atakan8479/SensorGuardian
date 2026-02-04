@@ -1,0 +1,148 @@
+{
+  "feature_order": [
+    "Packet_Rate",
+    "Packet_Drop_Rate",
+    "Packet_Duplication_Rate",
+    "Data_Throughput",
+    "Signal_Strength",
+    "SNR",
+    "Battery_Level",
+    "Energy_Consumption_Rate",
+    "Number_of_Neighbors",
+    "Route_Request_Frequency",
+    "Route_Reply_Frequency",
+    "Data_Transmission_Frequency",
+    "Data_Reception_Frequency",
+    "Error_Rate",
+    "CPU_Usage",
+    "Memory_Usage",
+    "Bandwidth"
+  ],
+  "imputer_median": {
+    "Packet_Rate": 50.6101698,
+    "Packet_Drop_Rate": 2.022129661,
+    "Packet_Duplication_Rate": 1.001065409,
+    "Data_Throughput": 98.87311086,
+    "Signal_Strength": -49.78665585,
+    "SNR": 19.67155428,
+    "Battery_Level": 79.24685623,
+    "Energy_Consumption_Rate": 5.079692126,
+    "Number_of_Neighbors": 4.0,
+    "Route_Request_Frequency": 10.0325943,
+    "Route_Reply_Frequency": 10.05581582,
+    "Data_Transmission_Frequency": 15.21378787,
+    "Data_Reception_Frequency": 15.09369024,
+    "Error_Rate": 0.101395625,
+    "CPU_Usage": 40.41651245,
+    "Memory_Usage": 30.1765552,
+    "Bandwidth": 99.95414444
+  },
+  "scaler_mean": {
+    "Packet_Rate": 51.1783082857584,
+    "Packet_Drop_Rate": 2.076663366316855,
+    "Packet_Duplication_Rate": 1.000920746399085,
+    "Data_Throughput": 97.56899494663074,
+    "Signal_Strength": -49.56337109869621,
+    "SNR": 19.498511331636394,
+    "Battery_Level": 79.0310517550819,
+    "Energy_Consumption_Rate": 5.234533751825304,
+    "Number_of_Neighbors": 4.464474624731952,
+    "Route_Request_Frequency": 10.160418711427221,
+    "Route_Reply_Frequency": 10.17726266977195,
+    "Data_Transmission_Frequency": 15.364610919915854,
+    "Data_Reception_Frequency": 15.317245916040829,
+    "Error_Rate": 0.104660917663817,
+    "CPU_Usage": 40.72975797772037,
+    "Memory_Usage": 30.38742780729864,
+    "Bandwidth": 99.73743601280859
+  },
+  "scaler_scale": {
+    "Packet_Rate": 11.012511908638714,
+    "Packet_Drop_Rate": 0.6357796904936582,
+    "Packet_Duplication_Rate": 0.1962997284201207,
+    "Data_Throughput": 22.027721816635918,
+    "Signal_Strength": 5.258009422325194,
+    "SNR": 5.275691462393009,
+    "Battery_Level": 10.594009250657711,
+    "Energy_Consumption_Rate": 1.427227547608798,
+    "Number_of_Neighbors": 1.977063690296559,
+    "Route_Request_Frequency": 2.2368547223737036,
+    "Route_Reply_Frequency": 2.288231825419274,
+    "Data_Transmission_Frequency": 3.285875878922201,
+    "Data_Reception_Frequency": 3.362987951688856,
+    "Error_Rate": 0.02916861586784238,
+    "CPU_Usage": 10.491342340647979,
+    "Memory_Usage": 5.299578529550602,
+    "Bandwidth": 19.78349865271064
+  },
+  "clip_bounds": {
+    "Packet_Rate": {
+      "p01": 27.1054026758,
+      "p99": 85.59798944119996
+    },
+    "Packet_Drop_Rate": {
+      "p01": 0.85049755448,
+      "p99": 4.726826193639999
+    },
+    "Packet_Duplication_Rate": {
+      "p01": 0.5475301126000001,
+      "p99": 1.4792520489799996
+    },
+    "Data_Throughput": {
+      "p01": 42.1089944106,
+      "p99": 146.63504789399997
+    },
+    "Signal_Strength": {
+      "p01": -61.520219355,
+      "p99": -36.132255780000015
+    },
+    "SNR": {
+      "p01": 5.53692817308,
+      "p99": 31.369903725599997
+    },
+    "Battery_Level": {
+      "p01": 51.6526388874,
+      "p99": 102.95361519599984
+    },
+    "Energy_Consumption_Rate": {
+      "p01": 2.5428861175999997,
+      "p99": 11.393487331599989
+    },
+    "Number_of_Neighbors": {
+      "p01": 0.0,
+      "p99": 9.0
+    },
+    "Route_Request_Frequency": {
+      "p01": 5.22808019462,
+      "p99": 17.199032382599977
+    },
+    "Route_Reply_Frequency": {
+      "p01": 5.28766759734,
+      "p99": 17.687033705599987
+    },
+    "Data_Transmission_Frequency": {
+      "p01": 8.29041891002,
+      "p99": 26.07407017459997
+    },
+    "Data_Reception_Frequency": {
+      "p01": 8.14694983828,
+      "p99": 26.524798040399986
+    },
+    "Error_Rate": {
+      "p01": 0.052977943480000005,
+      "p99": 0.2348819742399999
+    },
+    "CPU_Usage": {
+      "p01": 16.7000916208,
+      "p99": 68.09707391139995
+    },
+    "Memory_Usage": {
+      "p01": 18.3821846462,
+      "p99": 44.07474595599999
+    },
+    "Bandwidth": {
+      "p01": 51.9406960028,
+      "p99": 145.76082547199996
+    }
+  }
+}

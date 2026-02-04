@@ -1,0 +1,248 @@
+{
+  "version": "v1",
+  "feature_set": "realistic_13",
+  "generated_from": "train_normal_percentiles",
+  "policy": {
+    "model": "mlp_v2",
+    "feature_set": "realistic_13",
+    "probability": {
+      "type": "platt_calibrated",
+      "calibrator_path": "ml/artifacts/calibrator_platt.pkl"
+    },
+    "thresholds": {
+      "warn_low": 0.1,
+      "quarantine": 0.18
+    },
+    "decision_rules": {
+      "normal": "p_cal < warn_low",
+      "warning": "warn_low <= p_cal < quarantine",
+      "quarantine_recommended": "p_cal >= quarantine"
+    },
+    "notes": [
+      "Thresholds selected for a stable MVP UX. Quarantine threshold uses validated operating point; warn_low introduces a caution zone."
+    ]
+  },
+  "rules": [
+    {
+      "feature": "Packet_Rate",
+      "direction": "high",
+      "warn": {
+        "comparator": ">",
+        "threshold": 62.71048289,
+        "message": "Unusual packet rate"
+      },
+      "quarantine": {
+        "comparator": ">",
+        "threshold": 66.5602507325,
+        "message": "Unusual packet rate is critically high"
+      },
+      "display_name": "Packet rate",
+      "unit": "pps",
+      "short_reason": "Unusual packet rate"
+    },
+    {
+      "feature": "Packet_Duplication_Rate",
+      "direction": "high",
+      "warn": {
+        "comparator": ">",
+        "threshold": 1.2577209155,
+        "message": "Duplicate packets detected"
+      },
+      "quarantine": {
+        "comparator": ">",
+        "threshold": 1.329068032,
+        "message": "Duplicate packets detected is critically high"
+      },
+      "display_name": "Packet duplication rate",
+      "unit": "ratio",
+      "short_reason": "Duplicate packets detected"
+    },
+    {
+      "feature": "Signal_Strength",
+      "direction": "high",
+      "warn": {
+        "comparator": ">",
+        "threshold": -43.543049975,
+        "message": "Signal strength anomaly"
+      },
+      "quarantine": {
+        "comparator": ">",
+        "threshold": -41.8152933375,
+        "message": "Signal strength anomaly is critically high"
+      },
+      "display_name": "Signal strength",
+      "unit": "dBm",
+      "short_reason": "Signal strength anomaly"
+    },
+    {
+      "feature": "SNR",
+      "direction": "low",
+      "warn": {
+        "comparator": "<",
+        "threshold": 13.60367443,
+        "message": "Signal quality is low (SNR)"
+      },
+      "quarantine": {
+        "comparator": "<",
+        "threshold": 11.792199705,
+        "message": "Signal quality is critically low (SNR)"
+      },
+      "display_name": "Signal quality (SNR)",
+      "unit": "dB",
+      "short_reason": "Signal quality is low (SNR)"
+    },
+    {
+      "feature": "Battery_Level",
+      "direction": "low",
+      "warn": {
+        "comparator": "<",
+        "threshold": 66.962945095,
+        "message": "Battery level anomaly"
+      },
+      "quarantine": {
+        "comparator": "<",
+        "threshold": 63.520928705,
+        "message": "Battery level anomaly (critical)"
+      },
+      "display_name": "Battery level",
+      "unit": "%",
+      "short_reason": "Battery level anomaly"
+    },
+    {
+      "feature": "Number_of_Neighbors",
+      "direction": "high",
+      "warn": {
+        "comparator": ">",
+        "threshold": 7.0,
+        "message": "Neighbor topology changed"
+      },
+      "quarantine": {
+        "comparator": ">",
+        "threshold": 8.0,
+        "message": "Neighbor topology changed is critically high"
+      },
+      "display_name": "Neighbor count",
+      "unit": "count",
+      "short_reason": "Neighbor topology changed"
+    },
+    {
+      "feature": "Route_Request_Frequency",
+      "direction": "high",
+      "warn": {
+        "comparator": ">",
+        "threshold": 12.553513259999999,
+        "message": "Routing requests spiked"
+      },
+      "quarantine": {
+        "comparator": ">",
+        "threshold": 13.303405615,
+        "message": "Routing requests spiked (critical)"
+      },
+      "display_name": "Route request frequency",
+      "unit": "events/s",
+      "short_reason": "Routing requests spiked"
+    },
+    {
+      "feature": "Route_Reply_Frequency",
+      "direction": "high",
+      "warn": {
+        "comparator": ">",
+        "threshold": 12.57171206,
+        "message": "Unusual routing replies"
+      },
+      "quarantine": {
+        "comparator": ">",
+        "threshold": 13.3563266925,
+        "message": "Unusual routing replies is critically high"
+      },
+      "display_name": "Route reply frequency",
+      "unit": "events/s",
+      "short_reason": "Unusual routing replies"
+    },
+    {
+      "feature": "Data_Transmission_Frequency",
+      "direction": "high",
+      "warn": {
+        "comparator": ">",
+        "threshold": 18.893501784999998,
+        "message": "Outgoing traffic spike"
+      },
+      "quarantine": {
+        "comparator": ">",
+        "threshold": 19.974271095,
+        "message": "Outgoing traffic spike (critical)"
+      },
+      "display_name": "Transmit frequency",
+      "unit": "events/s",
+      "short_reason": "Outgoing traffic spike"
+    },
+    {
+      "feature": "Data_Reception_Frequency",
+      "direction": "high",
+      "warn": {
+        "comparator": ">",
+        "threshold": 18.85939296,
+        "message": "Incoming traffic spike"
+      },
+      "quarantine": {
+        "comparator": ">",
+        "threshold": 19.921802105,
+        "message": "Incoming traffic spike (critical)"
+      },
+      "display_name": "Receive frequency",
+      "unit": "events/s",
+      "short_reason": "Incoming traffic spike"
+    },
+    {
+      "feature": "CPU_Usage",
+      "direction": "high",
+      "warn": {
+        "comparator": ">",
+        "threshold": 52.729126315,
+        "message": "CPU load spike"
+      },
+      "quarantine": {
+        "comparator": ">",
+        "threshold": 56.027883672499996,
+        "message": "CPU load spike (critical)"
+      },
+      "display_name": "CPU usage",
+      "unit": "%",
+      "short_reason": "CPU load spike"
+    },
+    {
+      "feature": "Memory_Usage",
+      "direction": "high",
+      "warn": {
+        "comparator": ">",
+        "threshold": 36.420283045,
+        "message": "Memory usage spike"
+      },
+      "quarantine": {
+        "comparator": ">",
+        "threshold": 38.327789975,
+        "message": "Memory usage spike (critical)"
+      },
+      "display_name": "Memory usage",
+      "unit": "%",
+      "short_reason": "Memory usage spike"
+    },
+    {
+      "feature": "Bandwidth",
+      "direction": "low",
+      "warn": {
+        "comparator": "<",
+        "threshold": 75.200626135,
+        "message": "Bandwidth anomaly"
+      },
+      "quarantine": {
+        "comparator": "<",
+        "threshold": 67.8763753675,
+        "message": "Bandwidth anomaly (critical)"
+      },
+      "display_name": "Bandwidth",
+      "unit": "Mbps",
+      "short_reason": "Bandwidth anomaly"
+    }
+  ]
+}
